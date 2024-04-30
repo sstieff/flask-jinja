@@ -13,3 +13,9 @@ def add_stars(rating):
       my_return += "<span class=\"fa fa-star-half checked\"></span> "
     else: ""
   return my_return
+
+movie_dict = [
+  {"title": "Dune", "genre": "Sci-Fi", "rating":2.5},
+  {"title": "Alien", "genre": "Sci-Fi", "rating":3.5},
+  {"title": "Batman", "genre": "Comics", "rating":4.5}
+ ]

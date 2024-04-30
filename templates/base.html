@@ -6,6 +6,7 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/forms.css') }}">
     <style>
       /* makes images in div be size of box */
       .flexible img{
@@ -29,7 +30,7 @@
     <nav class="w3-bar w3-black">
       <a href="/" class="w3-bar-item w3-button">Home</a>
       <a href="/about" class="w3-bar-item w3-button">About</a>
-      <a href="/team" class="w3-bar-item w3-button">Team</a>
+      <a href="/register" class="w3-bar-item w3-button">Register</a>
       <a href="/movies" class="w3-bar-item w3-button">Movies</a>
     </nav>
     {% block content %}
