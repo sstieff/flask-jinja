@@ -12,10 +12,14 @@ import json
 # loads default recipe data
 from default_data import create_default_data 
 
-# import database files
+# import database files for Recipes
 from models import db
 from models.category import Category
 from models.recipe import Recipe
+
+#  Flask Admin
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 app = Flask(__name__)
 
@@ -127,6 +131,15 @@ def movies():
     "movies": movie_dict
   }  
   return render_template("movies.html",**context)
+
+# Flask Admin
+class RecipeView(ModelView):
+  column_searchable_list = ['name', 'author']
+
+admin = Admin(app)
+admin.url = '/admin/' #would not work on repl w/o this!
+admin.add_view(RecipeView(Recipe, db.session))
+admin.add_view(ModelView(Category, db.session))
 
 with app.app_context():
   db.create_all()
